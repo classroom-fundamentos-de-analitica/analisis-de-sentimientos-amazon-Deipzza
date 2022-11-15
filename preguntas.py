@@ -117,10 +117,10 @@ def pregunta_04():
         analyzer=analyzer,
         lowercase=True,
         stop_words='english',
-        token_pattern=r'\b[a-zA-Z]+',
+        token_pattern=r'\b\w\w+\b',
         binary=True,
-        max_df=5,
-        min_df=1,
+        max_df=1.0,
+        min_df=5,
     )
 
     # Cree un pipeline que contenga el CountVectorizer y el modelo de BernoulliNB.
@@ -146,7 +146,7 @@ def pregunta_04():
         cv=5,
         scoring="accuracy",
         refit=True,
-        return_train_score=True,
+        return_train_score=False,
     )
 
     # Búsque la mejor combinación de regresores
